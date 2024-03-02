@@ -14,6 +14,15 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    colors: {
+      'deltaBlue': '#11172a',
+      'testPink': '#6e0b5a',
+      'testOrange': '#b86507',
+      'testBlue': '#070db8',
+      'testGreen': '#16b807',
+      'tealBlue': '#07a6b8',
+
+    },
   },
   plugins: [],
 };
