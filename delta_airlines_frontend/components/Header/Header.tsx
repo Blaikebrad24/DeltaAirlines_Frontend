@@ -16,16 +16,16 @@ function Header() {
 
         <div className=' hidden md:inline-block w-1/2 items-center'>Delta Toolbar Options</div>
 
-        <div className='flex bg-testGreen items-center justify-between w-1/4 p-1 px-1 ml-12'>
+        <div className='flex  items-center justify-between w-1/4 p-1 px-1 ml-12'>
             <div className=''></div>
             <div className=''></div>
             <div className=''></div>
-            <div className=' bg-testPink'>Login | Sign Up</div>
+            <div className=' '>Login | Sign Up</div>
         </div>
-        <div className='flex bg-testGreen items-center justify-evenly w-1/7 p-1'>
+        <div className='flex  items-center justify-evenly w-1/7 p-1'>
             <div></div>
             <div></div>
-            <div className=' bg-tealBlue'>Notifications</div>
+            <div className=' '>Notifications</div>
             
         </div>
         
