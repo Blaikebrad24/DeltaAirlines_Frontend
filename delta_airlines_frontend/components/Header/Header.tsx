@@ -24,12 +24,12 @@ function Header() {
   }
 
   return (
-    <header className='fixed w-full z-20 top-0 flex items-center h-30 justify-between p-2 bg-deltaBlue '>
+    <header className='fixed w-full z-20 top-0 flex items-center h-30 justify-between p-1 bg-deltaBlue '>
         <div className='ml-10 top-0   w-1/4 flex-shrink-0'>
           <HeaderLogoImg/>
         </div>
 
-        <div className=' hidden xl:inline-flex ml-4 w-full items-center text-nowrap h-full bg-testPink font-bold space-x-5 '>
+        <div className=' hidden xl:inline-flex ml-4 w-full items-center text-nowrap h-full  font-bold  '>
             <ToolBarBtnGroup/>
         </div>
 
