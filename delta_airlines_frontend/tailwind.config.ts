@@ -21,6 +21,7 @@ const config: Config = {
       'testBlue': '#070db8',
       'testGreen': '#16b807',
       'tealBlue': '#07a6b8',
+      'deltaRed': '#e51937',
 
     },
   },
