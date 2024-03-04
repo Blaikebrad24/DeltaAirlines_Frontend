@@ -8,18 +8,21 @@ interface ButtonProps {
     isActive: boolean;
     onClick: () => void;
   }
-const Button = ({label, id, isActive, onClick} : ButtonProps) => {
+const Button = ({label, id, isActive, onClick } : ButtonProps) => {
+    let largeText = true;
+    if(label === 'Travel Info' || 'SkyMiles' || 'Need Help?'){largeText = false;}
+    
     return (
         <button
           onClick={onClick}
-          className={`mr-4 pb-2 h-20  ${isActive ? 'border-deltaRed border-b-2' : ''}`}
+          className={` ${isActive ? 'border-deltaRed border-b-2' : ''}`}
         >
-         <div className={` p-1 border-borderGray text-toothWhite  ${isActive ? 'rounded-md border-2 opacity-35': ''}`}>{label}</div> 
+          
+         <div className={` p-1 border-borderGray  ${largeText ? ' ':' text-sm p-2'}  ${isActive ? 'rounded-md border-2 opacity-35': ''}`}>{label}</div> 
         </button>
       );
 }
 function ToolBarBtnGroup() {
-    
 const [activeButton, setActiveButton] = useState<number | null>(null);
 let toolBarArray: string[] = ['BOOK','CHECK-IN', 'MY TRIPS', 
     'FLIGHT STATUS', 'Travel Info',
@@ -28,9 +31,11 @@ const handleButtonClick = (id: number) => {
         setActiveButton(id === activeButton ? null : id);
       };
   return (
-    <div className=' hidden xl:inline-flex ml-4 w-full items-center text-nowrap h-full  font-bold space-x-4 '>
+    <div className=' text-nowrap font-bold w-full pt-1 flex shrink'>
         {toolBarArray.map((tool, index)=>(
-            <Button label={tool} id={index} isActive={activeButton === index} onClick={() => handleButtonClick(index) } />
+            
+            <Button label={tool} id={index} isActive={activeButton === index} 
+                    onClick={() => handleButtonClick(index)} key={index}/>
         ))}
     </div>
   )

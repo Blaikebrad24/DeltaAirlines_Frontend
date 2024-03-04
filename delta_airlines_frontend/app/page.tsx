@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <main className="h-screen">
+    <main className="h-screen min-w-full">
 
       {/* EXTENDED TOOL BAR SECTION */}
       <div className=" flex ne w-full h-1/5 bg-testBlue">Extended ToolBar</div>

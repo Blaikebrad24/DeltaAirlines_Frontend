@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className=''>
+      <body className=' min-w-full'>
 
         {/* Header */}
         <Header/>

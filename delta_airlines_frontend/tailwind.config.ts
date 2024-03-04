@@ -23,7 +23,8 @@ const config: Config = {
       'tealBlue': '#07a6b8',
       'deltaRed': '#e51937',
       'borderGray': '#dedcdc',
-      'toothWhite': '#fcfcfc'
+      'toothWhite': '#fcfcfc',
+      'transparent': 'rgb(241 245 249)'
 
     },
   },

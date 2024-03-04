@@ -16,7 +16,7 @@ const HeaderLogoImg: React.FC = () => {
 
     const handleResize = () =>{
     const screenWidth = window.innerWidth;
-    if(screenWidth < 842){setSmallScreen(true)}
+    if(screenWidth < 990){setSmallScreen(true)}
     else{setSmallScreen(false)} 
     }
     window.addEventListener('resize', handleResize);
@@ -25,13 +25,16 @@ const HeaderLogoImg: React.FC = () => {
 
     },
     []);
+
   return (
-    <div className=' '>
-      {isSmallScreen ? (
+    <div className=''>
+        <Image className=' flex-none pt-2 px-4 ml-6' src="/images/delaLogo.png" alt="Delta Clone" width={200} height={200} priority={true} />
+
+      {/* {isSmallScreen ? (
         <FontAwesomeIcon icon={faBars} />
       ) : (
-        <Image className=' flex-shrink-0 ' src="/images/delaLogo.png" alt="Large Image" width={300} height={300} priority={true} />
-      )}
+        <Image className=' flex-shrink-0' src="/images/delaLogo.png" alt="Delta Clone" width={200} height={200} priority={true} />
+      )} */}
     </div>
   );
 };
