@@ -3,14 +3,17 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import HeaderLogoImg from '../Changers/headerLogoImg'
-import ToolBarBtnGroup from '../ToolBarBtnGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons/faBell';
+import UserToolBarGroup from '../UserToolBarGroup';
+import SkyMilesToolBarGrp from '../SkyMilesToolBarGrp';
 
 
 function Header() {
   const [pageBreakIcon, setPageBreakIcon] = useState(false);
   const [isWindowLoad, setIsWindowLoad] = useState(false);
+  const toolBarFirstFour: string[] = ['BOOK','CHECK-IN', 'MY TRIPS', 'FLIGHT STATUS'];
+  const toolBarSecondGroup: string[] = ['Travel Info', 'SkyMiles', 'Need Help?'];
   useEffect(() => {
     const handleResize = () =>{
       const screenWidth = window.innerWidth;
@@ -34,15 +37,19 @@ function Header() {
   }, []);
 
   return (
-    <header className='fixed w-full z-20 top-0 flex   items-center justify-evenly h-20  bg-deltaBlue divide-y divide-solid'>
-        <div className={` flex  border-2 border-testGreen ml-6 rounded-md `}>
-             
-             <div className='flex-none pt-1'><HeaderLogoImg/></div>
-             <ToolBarBtnGroup/>
-              
-
+    <header className='fixed w-full z-20 top-0 flex p-1  items-center justify-between h-20  bg-deltaBlue '>
+        <div className={`  ${pageBreakIcon ? 'flex': ''}`}>left</div>
+        <div className=''>
+          <div className={`flex ${pageBreakIcon ? 'hidden' : '  rounded-md pb-2'} `}>
+             <div className='flex-none '><HeaderLogoImg/></div>
+             <UserToolBarGroup strings={toolBarFirstFour} textSize={'font-semibold text-sm'}/>
+             <SkyMilesToolBarGrp strings={toolBarSecondGroup} textSize={' text-xs '}/>
+          </div>
         </div>
-        <div className=' border-2 border-deltaRed flex  ml-5 '>right</div>
+        <div className={`border-2 border-deltaRed flex justify-evenly`}>
+            <div className=''>SIGN UP | LOGIN </div>
+            <div>Notification</div>
+        </div>
 
     </header>
   )

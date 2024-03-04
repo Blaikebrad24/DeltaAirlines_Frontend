@@ -27,8 +27,8 @@ const HeaderLogoImg: React.FC = () => {
     []);
 
   return (
-    <div className=''>
-        <Image className=' flex-none pt-2 px-4 ml-6' src="/images/delaLogo.png" alt="Delta Clone" width={200} height={200} priority={true} />
+    <div className='  '>
+        <Image className=' pt-2' src="/images/delaLogo.png" alt="Delta Clone" width={150} height={150} priority={true} />
 
       {/* {isSmallScreen ? (
         <FontAwesomeIcon icon={faBars} />
