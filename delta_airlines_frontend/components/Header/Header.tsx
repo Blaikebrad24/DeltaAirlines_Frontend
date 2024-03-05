@@ -39,7 +39,7 @@ function Header() {
   }, []);
 
   return (
-    <header className={`fixed w-full z-20 top-0 flex p-1  items-center    bg-deltaBlue ${pageBreakIcon ? ' justify-between h-10':' justify-around h-20'}`}>
+    <header className={`fixed w-full z-20 top-0 flex p-2  items-center    bg-deltaBlue ${pageBreakIcon ? ' justify-between h-15':' justify-around h-20'}`}>
         <div className={`  ${pageBreakIcon ? 'flex': 'hidden'}`}>
           <button onClick={()=>console.log(' Menu Btn Pressed')}>
             <FontAwesomeIcon icon={faBars}/>
@@ -60,21 +60,28 @@ function Header() {
                   SIGN UP
                 </button>
             
-                <button className=' font-semibold bg-deltaRed p-1' onClick={()=>console.log('SIGN UP BTN PRESSED')}>
+                <button className=' items-center font-bold bg-deltaRed px-3 pt-1 pb-1' onClick={()=>console.log('SIGN UP BTN PRESSED')}>
                   LOG IN
                 </button>
                 <button className={`${pageBreakIcon ? 'hidden' : ' '}`} onClick={() =>console.log('Notifications Btn Pressed')}>
-                  <FontAwesomeIcon icon={faBell} size={'2x'}/>
+                  <div className=' relative'>
+                    <div className=' p-1 absolute left-3  text-toothWhite rounded-full bg-deltaRed flex items-center justify-center font-mono h-[15px] w-[15px] text-xs'>1</div>
+                    <FontAwesomeIcon icon={faBell} size={'2x'}/>
+                  </div>
+                  
                 </button>
                 <div className={`inline-block pt-1 h-[30px] min-h-[1em] w-0.5 self-stretch bg-borderGray ${pageBreakIcon ? 'hidden' : ' '}`}></div>
                 <div className={`${pageBreakIcon ? '' : 'hidden '}`}></div>
                 
-            <div className={`${pageBreakIcon ? 'hidden' : ' '}`}>
+            <div className={` px-2 pt-1 ${pageBreakIcon ? 'hidden' : ' '}`}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} size={'2x'} />
             </div>
         </div>
-        <div className={`flex space-x-5 justify-between p-2 ${pageBreakIcon ? '' : 'hidden '}`}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} size={'1x'} />
+        <div className={`  p-1 flex space-x-5 justify-between   ${pageBreakIcon ? '' : 'hidden '}`}>
+            <div className=' relative'>
+                  <div className=' p-1 absolute left-3  text-toothWhite rounded-full bg-deltaRed flex items-center justify-center font-mono h-[15px] w-[15px] text-xs'>1</div>
+                  <FontAwesomeIcon className=' ' icon={faBell} size={'xl'} />
+            </div>
           <div></div>
         </div>
         
