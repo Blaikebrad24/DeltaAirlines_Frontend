@@ -31,7 +31,7 @@ function SkyMilesToolBarGrp( { strings, textSize } : BtnGroupLabels) {
 
 
   return (
-    <div className=' mr-9 text-nowrap  w-full pt-1 flex space-x-2'>
+    <div className='  text-nowrap pt-1 space-x-2'>
         {strings.map((tool, index)=>(
              
             <Button label={tool} id={index} key={index} text_size={textSize} />
