@@ -39,10 +39,10 @@ function Header() {
   }, []);
 
   return (
-    <header className={`fixed w-full z-20 top-0 flex p-2  items-center    bg-deltaBlue ${pageBreakIcon ? ' justify-between h-15':' justify-around h-20'}`}>
-        <div className={`  ${pageBreakIcon ? 'flex': 'hidden'}`}>
+    <header className={`fixed w-full z-20 top-0 flex p-2  items-center border-b-[1px] border-slate700    bg-deltaBlue ${pageBreakIcon ? ' justify-between h-15':' justify-around h-20'}`}>
+        <div className={` px-4 ${pageBreakIcon ? 'flex': 'hidden'}`}>
           <button onClick={()=>console.log(' Menu Btn Pressed')}>
-            <FontAwesomeIcon icon={faBars}/>
+            <FontAwesomeIcon icon={faBars} size={'1x'}/>
           </button>
           
         </div>

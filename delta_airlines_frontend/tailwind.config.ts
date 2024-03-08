@@ -24,7 +24,8 @@ const config: Config = {
       'deltaRed': '#e51937',
       'borderGray': '#dedcdc',
       'toothWhite': '#fcfcfc',
-      'transparent': 'rgb(241 245 249)'
+      'transparent': 'rgb(241 245 249)',
+      'slate700': 'rgb(51 65 85)',
 
     },
   },

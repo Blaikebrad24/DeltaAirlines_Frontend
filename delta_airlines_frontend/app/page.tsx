@@ -2,17 +2,27 @@
 
 export default function Home() {
   return (
-    <main className="h-screen min-w-full">
+    <main className=" flex-col h-screen min-w-full bg-toothWhite">
 
       {/* EXTENDED TOOL BAR SECTION */}
-      <div className=" flex ne w-full h-1/5 bg-testBlue">Extended ToolBar</div>
-      {/* HERO SECTION */}
     
-      <div className=" bg-testOrange w-full h-screen"> HERO SECTION</div>
+      <div className=" bg-deltaBlue w-full h-[270px]  p-1 flex items-center justify-center"> 
+          
+          <div className=" bg-deltaRed w-4/5 h-full text-toothWhite flex-shrink-0 flex-col pt-8">
+              <div>Book ETC</div>
+              <div>Book ETC</div>
+              <div>Book ETC</div>
+
+          </div>
+          
+      </div>
+
+
       {/* CUSTOMER EXPERIENCE  */}
-      <div className=" bg-testPink w-full h-screen"> CUSTOMER EXPERIENCE</div>
+      <div className=" bg-testPink w-full "> CUSTOMER EXPERIENCE</div>
       {/* SEARCH SECTION */}
-      <div className=" bg-tealBlue w-full h-screen"> HERO SECTION</div>
+      <div className=" bg-tealBlue w-full "> HERO SECTION</div>
     </main>
   );
 }
+ 
