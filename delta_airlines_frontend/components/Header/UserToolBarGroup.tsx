@@ -16,7 +16,7 @@ const Button = ({label, id, isActive, onClick, text_size } : ButtonProps) => {
     return (
         <button
           onClick={onClick}
-          className={`p-2   ${isActive ? 'border-deltaRed border-b-2' : 'border-0'}`}
+          className={`p-1   ${isActive ? 'border-deltaRed border-b-2' : 'border-0'}`}
         >
           
          <div className={`  p-1 border-borderGray text-toothWhite  ${text_size}`}>{label}</div> 
@@ -37,7 +37,7 @@ const handleButtonClick = (id: number) => {
         setActiveButton(id === activeButton ? null : id);
       };
   return (
-    <div className='  text-nowrap   pt-1 flex justify-between '>
+    <div className='  text-nowrap   pt-1 flex justify-evenly '>
         {strings.map((tool, index)=>(
              
             <Button label={tool} id={index} isActive={activeButton === index}

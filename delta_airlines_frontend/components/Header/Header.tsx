@@ -9,6 +9,10 @@ import SkyMilesToolBarGrp from './SkyMilesToolBarGrp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false; /* eslint-disable import/first */
+
 
 function Header() {
   const [pageBreakIcon, setPageBreakIcon] = useState(false);
@@ -16,10 +20,12 @@ function Header() {
   const toolBarFirstFour: string[] = ['BOOK','CHECK-IN', 'MY TRIPS', 'FLIGHT STATUS'];
   const toolBarSecondGroup: string[] = ['Travel Info', 'SkyMiles', 'Need Help?'];
   useEffect(() => {
+
     const handleResize = () =>{
+      
       const screenWidth = window.innerWidth;
-      console.log(screenWidth);
-      if(screenWidth < 1023){setPageBreakIcon(true)}
+      // console.log(screenWidth);
+      if(screenWidth < 1093){setPageBreakIcon(true)}
       else{setPageBreakIcon(false)}
     }
     window.addEventListener('resize', handleResize);
@@ -48,11 +54,11 @@ function Header() {
         </div>
         <div></div>
         <div className='  '>
-          <div className={`flex  items-center justify-evenly    ${pageBreakIcon ? 'hidden' : '  rounded-md pb-2'} `}>
+          <div className={`flex  items-center justify-between    ${pageBreakIcon ? 'hidden' : '  rounded-md pb-2'} `}>
              <div className='flex-none '><HeaderLogoImg/></div>    
              <UserToolBarGroup strings={toolBarFirstFour} textSize={'font-bold text-sm'}/>
              
-             <SkyMilesToolBarGrp strings={toolBarSecondGroup} textSize={' text-xs '}/>
+             <SkyMilesToolBarGrp strings={toolBarSecondGroup} textSize={' text-xs flex-shrink'}/>
           </div>
         </div>
         <div className={`flex space-x-5 text-xs font-bold text-nowrap ${pageBreakIcon ? 'justify-around': ''}`}>
