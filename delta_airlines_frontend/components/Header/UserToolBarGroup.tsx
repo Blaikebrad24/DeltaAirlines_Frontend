@@ -37,7 +37,7 @@ const handleButtonClick = (id: number) => {
         setActiveButton(id === activeButton ? null : id);
       };
   return (
-    <div className='  text-nowrap   pt-1 flex justify-evenly '>
+    <div className='  text-nowrap   pt-1 flex justify-center space-x-7 '>
         {strings.map((tool, index)=>(
              
             <Button label={tool} id={index} isActive={activeButton === index}
