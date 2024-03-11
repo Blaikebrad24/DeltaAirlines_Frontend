@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import HeroCardSection from "@/components/Sections/HeroSection/HeroCardSection";
 
 
 
@@ -19,13 +20,9 @@ export default function Home() {
       {/* EXTENDED TOOL BAR SECTION */}
     
       <div className=" bg-deltaBlue flex w-full items-center justify-center h-[270px] relative"> 
-          
-          <div className=" text-toothWhite absolute bottom-0 w-3/4 h-2/3 bg-testGreen">
-                
-                    {/* <BookFullPageCard/> */}
-                    
-                 
-          </div>
+       
+          <HeroCardSection/>
+
           
       </div>
 
