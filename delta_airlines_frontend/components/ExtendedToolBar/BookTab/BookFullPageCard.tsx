@@ -20,8 +20,8 @@ useEffect(() => {
     const handleResize = () =>{
       
       const screenWidth = window.innerWidth;
-      // console.log(screenWidth);
-      if(screenWidth < 986){setPageBreakIcon(true)}
+      console.log(screenWidth);
+      if(screenWidth < 817){setPageBreakIcon(true)}
       else{setPageBreakIcon(false)}
     }
     window.addEventListener('resize', handleResize);
@@ -31,41 +31,17 @@ useEffect(() => {
   }, []);
 
   return (
-        <div className={` ${pageBreakIcon ? 'w-full h-2/3 flex flex-col  pt-5 relative flex-shrink-0' : 'hidden'}`}>
-        
-        <UserToolBarGroup strings={toolBarFirstFour} textSize={'font-bold text-xs '}/>
-        {/* Destination Short Card */}
+        <div className={`flex flex-col items-center justify-between w-full`}>
+              <div className={` text-xs  grid ${pageBreakIcon ? 'grid-cols-3' : 'grid-cols-4'}  h-1/2 w-3/4 bg-testOrange text-nowrap `}>
+                {/* GRID OF BOOK CHECKIN MY TRIPS FLIGHT_STATUS */}
+                  <div className="">BOOK</div>
+                  <div className="">CHECK-IN</div>
+                  <div>MY TRIPS</div>
+                  <div className={` ${pageBreakIcon ? 'hidden': 'inline-block'}`}>FLIGHT STATUS</div>
 
-        <div className=" relative flex w-full items-center justify-center  mt-3  h-full">
-
-            
-            {/* Departure City */}
-            <div className=" flex flex-col mt-3">
-                <p className="text-6xl font-extralight mr-10">DFW</p>
-                <p className=" text-xs mt-2 text-nowrap">Dallas-Fort Worth, TX</p>
-            </div>
-            {/* Double-Side Arrow ICON */}
-
-            <CompareArrowsIcon sx={{color: red[500], fontSize: 50}}/>
-            
-
-            
-            
-
-
-
-            {/* Destination City */}
-            <div className=" flex flex-col  mt-3">
-                <p className="text-6xl font-extralight ml-10">To</p>
-                <p className=" text-xs mt-2 text-nowrap ml-5">Your Destination</p>
-            </div>
-            {/* Half Circle Page down button */}
-            <div className="absolute bottom-0 ">
-                
-                
-            </div>
+              </div>
+              <div className=" h-1/2 w-full bg-tealBlue">Travel Card Here</div>
         </div>
-    </div>
   )
 }
 

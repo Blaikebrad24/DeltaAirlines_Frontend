@@ -19,13 +19,15 @@ function Header() {
   const [isWindowLoad, setIsWindowLoad] = useState(false);
   const toolBarFirstFour: string[] = ['BOOK','CHECK-IN', 'MY TRIPS', 'FLIGHT STATUS'];
   const toolBarSecondGroup: string[] = ['Travel Info', 'SkyMiles', 'Need Help?'];
+
+  
   useEffect(() => {
 
     const handleResize = () =>{
       
       const screenWidth = window.innerWidth;
       // console.log(screenWidth);
-      if(screenWidth < 1093){setPageBreakIcon(true)}
+      if(screenWidth < 1077){setPageBreakIcon(true)}
       else{setPageBreakIcon(false)}
     }
     window.addEventListener('resize', handleResize);
@@ -54,11 +56,11 @@ function Header() {
         </div>
         <div></div>
         <div className='  '>
-          <div className={`flex  items-center justify-between    ${pageBreakIcon ? 'hidden' : '  rounded-md pb-2'} `}>
+          <div className={`   items-center justify-between   ${pageBreakIcon ? 'hidden' : 'flex  rounded-md pb-2'} `}>
              <div className='flex-none '><HeaderLogoImg/></div>    
-             <UserToolBarGroup strings={toolBarFirstFour} textSize={'font-bold text-sm'}/>
+             <UserToolBarGroup strings={toolBarFirstFour} textSize={'font-bold text-sm text-nowrap'}/>
              
-             <SkyMilesToolBarGrp strings={toolBarSecondGroup} textSize={' text-xs flex-shrink'}/>
+             <SkyMilesToolBarGrp strings={toolBarSecondGroup} textSize={' text-xs flex-shrink text-nowrap' }/>
           </div>
         </div>
         <div className={`flex space-x-5 text-xs font-bold text-nowrap ${pageBreakIcon ? 'justify-around': ''}`}>

@@ -1,6 +1,6 @@
 'use client'
 
-import {  useState } from 'react';
+import {  createContext, useContext, useState } from 'react';
 
 interface ButtonProps {
     label: string;
@@ -10,6 +10,12 @@ interface ButtonProps {
     text_size: string;
     
   }
+  interface UIContextType {
+    selectedComponent: string;
+    setSelectedComponent: (component : string) => void;
+  }
+const UIContext = createContext<UIContextType>({selectedComponent: '', setSelectedComponent: () => {}});
+
 const Button = ({label, id, isActive, onClick, text_size } : ButtonProps) => {
 
     
@@ -31,17 +37,19 @@ interface BtnGroupLabels {
 
 function UserToolBarGroup( { strings, textSize } : BtnGroupLabels) {
 const [activeButton, setActiveButton] = useState<number | null>(null);
+const { setSelectedComponent } = useContext(UIContext);
 
-
-const handleButtonClick = (id: number) => {
+const handleButtonClick = (id: number, component: string) => {
         setActiveButton(id === activeButton ? null : id);
+        console.log(component);
+        setSelectedComponent(component);
       };
   return (
-    <div className='  text-nowrap   pt-1 flex justify-center space-x-7 '>
+    <div className='  text-nowrap   pt-1 flex justify-center space-x-2 '>
         {strings.map((tool, index)=>(
              
             <Button label={tool} id={index} isActive={activeButton === index}
-          onClick={() => handleButtonClick(index)}  key={index} text_size={textSize}/>
+          onClick={() => handleButtonClick(index,tool)}  key={index} text_size={textSize}/>
         ))}
     </div>
   )
