@@ -20,7 +20,6 @@ export default function RootLayout({
       <body className=' min-w-full'>
 
         {/* Header */}
-        <Header/>
         {children} 
         
         </body>

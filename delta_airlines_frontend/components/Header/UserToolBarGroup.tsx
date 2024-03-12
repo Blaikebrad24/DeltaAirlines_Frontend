@@ -1,6 +1,7 @@
 'use client'
 
-import {  createContext, useState } from 'react';
+import {  Dispatch, SetStateAction, createContext, useContext, useState } from 'react';
+import { useHeroContext } from '../Context/HeroUIContext';
 
 interface ButtonProps {
     label: string;
@@ -13,7 +14,6 @@ interface ButtonProps {
 
 const Button = ({label, id, isActive, onClick, text_size } : ButtonProps) => {
 
-    
     return (
         <button
           onClick={onClick}
@@ -31,21 +31,24 @@ interface BtnGroupLabels {
 }
 
 
+
 function UserToolBarGroup( { strings, textSize } : BtnGroupLabels) {
 const [activeButton, setActiveButton] = useState<number | null>(0);
-
+const { setSelectedTab } = useHeroContext();
 
 const handleButtonClick = (id: number, componentState:string) => {
-        setActiveButton( id === activeButton ? null : id);
-        console.log(id);
+        setSelectedTab(componentState);
+        setActiveButton( id === activeButton ? null : id)
+        console.log(componentState);
+       
       };
   return (
     
       <div className='  text-nowrap   pt-1 flex justify-center space-x-2 '>
           {strings.map((tool, index)=>(
             
-                <Button label={tool} id={index} isActive={activeButton === index}
-              onClick={() => handleButtonClick(index,tool)}  key={index} text_size={textSize}/>
+                <Button label={tool} id={index}
+            onClick={() => handleButtonClick(index,tool)} key={index} text_size={textSize} isActive={activeButton === index}/>
           
           ))}
       </div>
@@ -55,4 +58,3 @@ const handleButtonClick = (id: number, componentState:string) => {
 
 export default UserToolBarGroup;
 
-// working on useContext from either page or <Header></Header>

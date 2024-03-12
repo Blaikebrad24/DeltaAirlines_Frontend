@@ -1,15 +1,19 @@
+'use client'
+
 import BorderBottomRed from "@/components/Buttons/borderBottomRed";
 import UserToolBarGroup from "@/components/Header/UserToolBarGroup";
 import { faArrowsLeftRight } from "@fortawesome/free-solid-svg-icons/faArrowsLeftRight";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import HeroCardSection from "@/components/Sections/HeroSection/HeroCardSection";
+import Header from "@/components/Header/Header";
+import { HeroUIContext } from "@/components/Context/HeroUIContext";
 
 
 
-config.autoAddCss = false; /* eslint-disable import/first */
+
 export default function Home() {
 
 
@@ -18,14 +22,10 @@ export default function Home() {
     <main className=" flex flex-col h-screen min-w-full bg-toothWhite overflow-y-auto">
 
       {/* EXTENDED TOOL BAR SECTION */}
-    
-      <div className=" bg-deltaBlue flex w-full items-center justify-center h-[270px] relative"> 
-       
-          <HeroCardSection/>
-
-          
-      </div>
-
+      <HeroUIContext>
+        <Header/>
+        <HeroCardSection/>
+      </HeroUIContext>
 
       {/* CUSTOMER EXPERIENCE  */}
       <div className=" bg-testPink w-full "> CUSTOMER EXPERIENCE</div>

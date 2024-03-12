@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import HeaderLogoImg from './Changers/headerLogoImg'
 import { faBell } from '@fortawesome/free-solid-svg-icons/faBell';
 import UserToolBarGroup from './UserToolBarGroup';
@@ -11,7 +11,8 @@ import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
-config.autoAddCss = false; /* eslint-disable import/first */
+
+
 
 
 function Header() {
