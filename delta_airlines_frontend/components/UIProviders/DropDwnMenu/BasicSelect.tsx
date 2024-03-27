@@ -32,15 +32,16 @@ export default function BasicSelect({tripChoice, dropDownSelections} : DropDownS
   }, []);
 
   return (
-    <Box sx={{ minWidth: 150 }}>
-      <FormControl variant="standard" sx={{ m: 1, minWidth: 150 }}>
-        <InputLabel id="demo-simple-select-standard-label">{tripChoice}</InputLabel>
+    <Box sx={{ minWidth: 150, borderColor: '#fcfcfc'}}>
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 150, borderBottomColor: 'white' }}>
+        <InputLabel sx={{color: "#e3f2fd"}} id="demo-simple-select-standard-label">{tripChoice}</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
           value={age}
           onChange={handleChange}
           label="Age"
+          
         >
           <MenuItem value="">
             <em>None</em>
